@@ -2,7 +2,7 @@
 
 <img alt="Binoculars Logo" align="right" src="https://s3.amazonaws.com/foo.software/images/marketing/binoculars.svg" width="20%" />
 
-A GitHub Action to measure web page SEO friendliness. Binoculars extends [Google's Lighthouse](https://github.com/GoogleChrome/lighthouse) to provide a more opinionated, SEO specific audit. Use Binoculars for your SEO integration testing or just for a piece of mind. Simple implementation or advanced customization including **Slack** notifications, **AWS S3** HTML report uploads, and more!
+A GitHub Action to measure web page SEO friendliness. Binoculars extends [Google's Lighthouse](https://github.com/GoogleChrome/lighthouse) to provide a more opinionated, SEO specific audit. Use Binoculars for SEO integration testing or just a piece of mind. Simple implementation or advanced customization including **Slack** notifications, **AWS S3** HTML report uploads, and more!
 
 - Run a single audit or multiple audits at once.
 - Upload reports to S3 via simple configuration.
