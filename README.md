@@ -17,7 +17,6 @@ A GitHub Action to measure web page SEO friendliness. Binoculars extends [Google
   - [HTML Reports](#screenshot-html-reports)
   - [PR Comments](#screenshot-pr-comments)
   - [Slack Notifications](#screenshot-slack-notifications)
-  - [Fail Workflow when Minimum Scores Aren't Met](#screenshot-fail-workflow-when-minimum-scores-arent-met)
 - [Inputs](#inputs)
 - [Outputs](#outputs)
 - [Usage](#usage)
@@ -28,25 +27,19 @@ A GitHub Action to measure web page SEO friendliness. Binoculars extends [Google
 Screenshots below for visual look at the things you can do.
 
 ## Screenshot: Output
-<img alt="Binoculars GitHub action output" src="https://lighthouse-check.s3.amazonaws.com/images/github-actions/github-action-lighthouse-check-output.png" />
+<img alt="Binoculars GitHub action output" src="https://s3.amazonaws.com/foo.software/images/binoculars-action/output.png" />
 
 ## Screenshot: Save HTML Reports as Artifacts
-<img alt="Binoculars GitHub action save artifacts" src="https://lighthouse-check.s3.amazonaws.com/images/github-actions/github-action-lighthouse-check-artifacts.png" width="600" />
+<img alt="Binoculars GitHub action save artifacts" src="https://s3.amazonaws.com/foo.software/images/binoculars-action/artifacts.png" width="400" />
 
 ## Screenshot: HTML Reports
-<img alt="Binoculars GitHub action HTML report" src="https://lighthouse-check.s3.amazonaws.com/images/github-actions/github-action-lighthouse-check-lighthouse-report.png" />
+<img alt="Binoculars GitHub action HTML report" src="https://s3.amazonaws.com/foo.software/images/binoculars-action/report.png" />
 
 ## Screenshot: PR Comments
-<img alt="Binoculars GitHub comments" src="https://lighthouse-check.s3.amazonaws.com/images/lighthouse-check-pr-comment.png" width="400">
+<img alt="Binoculars GitHub comments" src="https://s3.amazonaws.com/foo.software/images/binoculars-action/comment.png" width="400">
 
 ## Screenshot: Slack Notifications
-<img alt="Binoculars GitHub action Slack notification" src="https://lighthouse-check.s3.amazonaws.com/images/github-actions/github-action-lighthouse-check-slack.png" width="520" />
-
-## Screenshot: Fail Workflow when Minimum Scores Aren't Met
-
-<img alt="Binoculars GitHub action fail if scores don't meet minimum requirement on a PR" src="https://lighthouse-check.s3.amazonaws.com/images/github-actions/github-action-lighthouse-check-status-action-pr-fail.png" width="600" />
-
-<img alt="Binoculars GitHub action fail if scores don't meet minimum requirement" src="https://lighthouse-check.s3.amazonaws.com/images/github-actions/github-action-lighthouse-check-status-action.png" />
+<img alt="Binoculars GitHub action Slack notification" src="https://s3.amazonaws.com/foo.software/images/binoculars-action/slack.png" width="520" />
 
 ## Inputs
 
@@ -110,6 +103,12 @@ Screenshots below for visual look at the things you can do.
     <td>If <code>true</code> and <code>accessToken</code> is set scores will be posted as comments.</td>
     <td><code>boolean</code></td>
     <td><code>false</code></td>
+  </tr>
+  <tr>
+    <td><code>minScore</code></td>
+    <td>The required minimum score. If score is lower an error will throw.</td>
+    <td><code>number</code></td>
+    <td><code>undefined</code></td>
   </tr>
   <tr>
     <td><code>outputDirectory</code></td>
@@ -193,7 +192,7 @@ jobs:
           enableComments: true
           minScore: 80
           outputDirectory: /tmp/artifacts
-          urls: 'https://www.foo.software,https://www.foo.software/lighthouse'
+          urls: 'https://www.foo.software|https://www.foo.software/lighthouse'
           sha: ${{ github.sha }}
           slackWebhookUrl: ${{ secrets.BINOCULARS_WEBHOOK_URL }}
       - name: Upload artifacts

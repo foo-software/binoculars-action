@@ -1,5 +1,5 @@
 name: 'Binoculars'
-description: 'A GitHub Action to measure web page SEO friendliness.'
+description: "A GitHub Action to measure web page SEO friendliness. Binoculars extends Google's Lighthouse to provide a more opinionated, SEO specific audit. Simple implementation or advanced customization including Slack notifications, AWS S3 HTML report uploads, and more!"
 inputs:
   author:
     description: 'For Slack notifications: A user handle, typically from GitHub.'
@@ -17,6 +17,8 @@ inputs:
     description: "An endpoint to post comments to. This is only needed if you want to trigger comments on 'push'. A 'pull_request' trigger does not require this to be set. Typically this will be from GitHub's API. Example: https://api.github.com/repos/:owner/:repo/commits/:commit_sha/comments."
   enableComments:
     description: 'If true and accessToken is set scores will be posted as comments.'
+  minScore:
+    description: 'The required minimum score. If score is lower an error will throw.'
   outputDirectory:
     description: 'An absolute directory path to output report. You can do this an an alternative or combined with an S3 upload.'
   pr:

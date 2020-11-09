@@ -20,7 +20,7 @@ jobs:
           enableComments: true
           minScore: 80
           outputDirectory: /tmp/artifacts
-          urls: 'https://www.foo.software,https://www.foo.software/lighthouse'
+          urls: 'https://www.foo.software|https://www.foo.software/lighthouse'
           sha: ${{ github.sha }}
           slackWebhookUrl: ${{ secrets.BINOCULARS_WEBHOOK_URL }}
       - name: Upload artifacts
