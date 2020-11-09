@@ -1,0 +1,30 @@
+name: Binoculars
+on: [pull_request]
+
+jobs:
+  binoculars:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@master
+      - run: mkdir /tmp/artifacts
+      - name: Binoculars
+        uses: ./
+        with:
+          accessToken: ${{ secrets.BINOCULARS_GITHUB_ACCESS_TOKEN }}
+          author: ${{ github.actor }}
+          awsAccessKeyId: ${{ secrets.BINOCULARS_AWS_ACCESS_KEY_ID }}
+          awsBucket: ${{ secrets.BINOCULARS_AWS_BUCKET }}
+          awsRegion: ${{ secrets.BINOCULARS_AWS_REGION }}
+          awsSecretAccessKey: ${{ secrets.BINOCULARS_AWS_SECRET_ACCESS_KEY }}
+          branch: ${{ github.ref }}
+          enableComments: true
+          minScore: 80
+          outputDirectory: /tmp/artifacts
+          urls: 'https://www.foo.software,https://www.foo.software/lighthouse'
+          sha: ${{ github.sha }}
+          slackWebhookUrl: ${{ secrets.BINOCULARS_WEBHOOK_URL }}
+      - name: Upload artifacts
+        uses: actions/upload-artifact@master
+        with:
+          name: Binoculars reports
+          path: /tmp/artifacts

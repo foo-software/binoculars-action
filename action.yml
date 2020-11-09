@@ -1,0 +1,37 @@
+name: 'Binoculars'
+description: 'A GitHub Action to measure web page SEO friendliness.'
+inputs:
+  author:
+    description: 'For Slack notifications: A user handle, typically from GitHub.'
+  awsAccessKeyId:
+    description: 'The AWS accessKeyId for an S3 bucket.'
+  awsBucket:
+    description: 'The AWS Bucket for an S3 bucket.'
+  awsRegion:
+    description: 'The AWS region for an S3 bucket.'
+  awsSecretAccessKey:
+    description: 'The AWS secretAccessKey for an S3 bucket.'
+  branch:
+    description: 'For Slack notifications: A version control branch, typically from GitHub.'
+  commentUrl:
+    description: "An endpoint to post comments to. This is only needed if you want to trigger comments on 'push'. A 'pull_request' trigger does not require this to be set. Typically this will be from GitHub's API. Example: https://api.github.com/repos/:owner/:repo/commits/:commit_sha/comments."
+  enableComments:
+    description: 'If true and accessToken is set scores will be posted as comments.'
+  outputDirectory:
+    description: 'An absolute directory path to output report. You can do this an an alternative or combined with an S3 upload.'
+  pr:
+    description: 'For Slack notifications: A version control pull request URL, typically from GitHub.'
+  accessToken:
+    description: 'Access token of a user to post PR comments.'
+  sha:
+    description: 'For Slack notifications: A version control sha, typically from GitHub.'
+  slackWebhookUrl:
+    description: 'A Slack Incoming Webhook URL to send notifications to.'
+  urls:
+    description: 'A pipe separated list of URLs.'
+runs:
+  using: 'node12'
+  main: 'index.js'
+branding:
+  icon: 'eye'
+  color: 'blue'
