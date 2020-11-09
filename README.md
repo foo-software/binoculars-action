@@ -2,7 +2,7 @@
 
 <img alt="Binoculars Logo" align="right" src="https://s3.amazonaws.com/foo.software/images/marketing/binoculars.svg" width="20%" />
 
-A GitHub Action to measure web page SEO friendliness. Binoculars extends [Google's Lighthouse](https://github.com/GoogleChrome/lighthouse) to provide a more opinionated, SEO specific audit. Simple implementation or advanced customization including **Slack** notifications, **AWS S3** HTML report uploads, and more!
+A GitHub Action to measure web page SEO friendliness. Binoculars extends [Google's Lighthouse](https://github.com/GoogleChrome/lighthouse) to provide a more opinionated, SEO specific audit. Use Binoculars for your SEO integration testing or just for a piece of mind. Simple implementation or advanced customization including **Slack** notifications, **AWS S3** HTML report uploads, and more!
 
 - Run a single audit or multiple audits at once.
 - Upload reports to S3 via simple configuration.
@@ -12,7 +12,6 @@ A GitHub Action to measure web page SEO friendliness. Binoculars extends [Google
 # Table of Contents
 
 - [Screenshots](#screenshots)
-  - [Output](#screenshot-output)
   - [Save HTML Reports as Artifacts](#screenshot-save-html-reports-as-artifacts)
   - [HTML Reports](#screenshot-html-reports)
   - [PR Comments](#screenshot-pr-comments)
@@ -25,9 +24,6 @@ A GitHub Action to measure web page SEO friendliness. Binoculars extends [Google
 # Screenshots
 
 Screenshots below for visual look at the things you can do.
-
-## Screenshot: Output
-<img alt="Binoculars GitHub action output" src="https://s3.amazonaws.com/foo.software/images/binoculars-action/output.png" />
 
 ## Screenshot: Save HTML Reports as Artifacts
 <img alt="Binoculars GitHub action save artifacts" src="https://s3.amazonaws.com/foo.software/images/binoculars-action/artifacts.png" width="400" />
