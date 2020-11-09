@@ -1,5 +1,5 @@
-name: 'Binoculars'
-description: "A GitHub Action to measure web page SEO friendliness. Binoculars extends Google's Lighthouse to provide a more opinionated, SEO specific audit. Simple implementation or advanced customization including Slack notifications, AWS S3 HTML report uploads, and more!"
+name: 'Binoculars Action'
+description: "A GitHub Action to measure web page SEO friendliness. Simple or customized setup including Slack notifications, AWS S3 HTML report uploads, and more!"
 inputs:
   author:
     description: 'For Slack notifications: A user handle, typically from GitHub.'
