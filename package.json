@@ -1,6 +1,6 @@
 {
   "name": "binoculars-action",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "A GitHub Action to measure web page SEO friendliness.",
   "main": "index.js",
   "scripts": {
