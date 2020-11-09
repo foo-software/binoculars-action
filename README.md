@@ -112,6 +112,12 @@ Screenshots below for visual look at the things you can do.
     <td><code>false</code></td>
   </tr>
   <tr>
+    <td><code>minScore</code></td>
+    <td>The required minimum score. If score is lower an error will throw.</td>
+    <td><code>number</code></td>
+    <td><code>undefined</code></td>
+  </tr>
+  <tr>
     <td><code>outputDirectory</code></td>
     <td>An absolute directory path to output report. You can do this an an alternative or combined with an S3 upload.</td>
     <td><code>string</code></td>
@@ -193,7 +199,7 @@ jobs:
           enableComments: true
           minScore: 80
           outputDirectory: /tmp/artifacts
-          urls: 'https://www.foo.software,https://www.foo.software/lighthouse'
+          urls: 'https://www.foo.software|https://www.foo.software/lighthouse'
           sha: ${{ github.sha }}
           slackWebhookUrl: ${{ secrets.BINOCULARS_WEBHOOK_URL }}
       - name: Upload artifacts
